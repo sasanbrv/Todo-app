@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+<body class="dark w-10/12 md:w-5/12 mx-auto ">
+    <div class="flex justify-between w-full m-auto pt-20" >
+        <h2 class="font-bold text-3xl tracking-widest  text-white">T O D O</h2>
+        <button onclick="changeTheme(this)"><img src="./images/icon-sun.svg" alt=""></button>
+    </div>
+    <div id="addTodoBox" class="flex items-start bg-box w-full m-auto my-10 px-4 pt-4 rounded-lg">
+        <button id="addTodo" onclick="addTodo(this)" class="text border-gray-500 px-2 rounded-full hover:bg-gradient-to-br from-blue-500 to-purple-600 hover:text-white">+</button>
+        <textarea name="" id="newTodoText" placeholder="Create a new todo ..." class="bg-transparent text outline-none border-none resize-none w-full pl-4"></textarea>
+        <span id="error" class="text-red-500 hidden">writeTodo!</span>
+    </div>
+    <div class="text flex justify-start bg-box w-full m-auto items-start rounded-t-lg">
+        <ul id="todoList" class="w-full">
+            <li class="relative group flex px-4 py-3 border-bottom complete">
+                <button onclick="completeTodo(this)" class="complete-circle  mt-1"><img src="./images/icon-check.svg" alt="" class="pl-1"></button>
+                <p class="w-full pl-4 complete-text">Getup at 8am</p>
+                <button onclick="deleteTodo(this)" class="absolute top-4 right-3 hidden group-hover:block"><img src="./images/icon-cross.svg" alt=""></button>
+            </li>
+            <li class="relative group flex px-4 py-3 border-bottom active">
+                <button onclick="completeTodo(this)" class="circle mt-1"></button>
+                <p class="w-full pl-4">Take a shower</p>
+                <button onclick="deleteTodo(this)" class="absolute top-4 right-3 hidden group-hover:block"><img src="./images/icon-cross.svg" alt=""></button>
+            </li>
+            <li class="relative group flex px-4 py-3 border-bottom active">
+                <button onclick="completeTodo(this)" class="circle mt-1"></button>
+                <p class="w-full pl-4">Do my homework</p>
+                <button onclick="deleteTodo(this)" class="absolute top-4 right-3 hidden group-hover:block"><img src="./images/icon-cross.svg" alt=""></button>
+            </li>
+            <li class="relative group flex px-4 py-3 border-bottom active">
+                <button onclick="completeTodo(this)" class="circle mt-1"></button>
+                <p class="w-full pl-4">Go to the gym</p>
+                <button onclick="deleteTodo(this)" class="absolute top-4 right-3 hidden group-hover:block"><img src="./images/icon-cross.svg" alt=""></button>
+            </li>
+        </ul>
+    </div>
+    <div id="todoInf" class="flex bg-box w-full mx-auto justify-between py-2 px-2 text-gray-600 rounded-b-lg">
+        <h6 id="countInf" class="text-sm pr-2"></h6>
+        <div class="flex">
+            <button id="filterAll" onclick="todoFilter('all',this)" class="filter-btn activebtn">All</button> 
+            <button id="filterActive" onclick="todoFilter('active',this)" class="filter-btn px-4">Active</button>
+            <button id="filterComplete" onclick="todoFilter('complete',this)" class="filter-btn">Complete</button>
+        </div>
+        <button onclick="clearAll()">clear complete</button>
+    </div>
+    <div class="flex justify-center text-gray-600 mt-10">
+            <h6>drag and drop to reorder list</h6>
+    </div>
+</body>
+<script src="./main.js"></script>
+</html>

@@ -1,0 +1,82 @@
+@font-face {
+    font-family: josefin;
+    src: url(https://fonts.google.com/specimen/Josefin+Sans);
+}
+
+:root{
+    --bg-color: hsl(233, 11%, 84%);
+    --bg-img: url("./images/bg-desktop-light.jpg");
+    --bg-box: hsl(0, 0%, 98%);
+    --text-color: black;
+    --border-b: 1px solid hsl(233, 11%, 84%);
+    --circle-border: 1px solid hsl(233, 11%, 84%);
+
+
+}
+
+body.dark{
+    --bg-color: hsl(235, 21%, 11%);
+    --bg-img: url("./images/bg-desktop-dark.jpg");
+    --bg-box: hsl(235, 24%, 19%);
+    --text-color: white;
+    --border-b: 1px solid hsl(237, 14%, 26%);
+    --circle-border: 1px solid hsl(237, 14%, 26%);
+}
+
+body{
+    font-family: josefin;
+    height: 100%;
+    background-color:var(--bg-color) ;
+    background-image: var(--bg-img);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+@media (max-width: 480px) {
+  body {
+    background-size: 100% 30%;
+    
+  }
+}
+
+.dark-bg{
+    background-color:  hsl(235, 24%, 19%);
+}
+
+.circle{
+    border: var(--circle-border);
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+
+
+}
+.circle:hover{
+    border-color:  hsl(220, 98%, 61%);
+}
+
+.complete-circle{
+    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.complete-text{
+    text-decoration: line-through;
+    color: hsl(236, 9%, 61%);
+}
+
+.bg-box{
+    background-color: var(--bg-box);
+}
+
+.text{
+    color: var(--text-color);
+}
+.border-bottom{
+    border-bottom: var(--border-b);
+}
+
+.activebtn{
+    color: hsl(220, 98%, 61%);
+    font-weight: bold;
+}
