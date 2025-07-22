@@ -1,4 +1,6 @@
 todo app with HTML/CSS/Tailwind/JS
+link:
+https://sasanbrv.github.io/Todo-app/
 
 Users should be able to:
 
@@ -12,5 +14,4 @@ Users should be able to:
 - Toggle light and dark mode
 - Drag and drop to reorder items on the list
 
-link:
-https://sasanbrv.github.io/Todo-app/
+
